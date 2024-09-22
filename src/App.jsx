@@ -32,13 +32,13 @@ function App() {
       setItachi(itachi);
       const hidan = akatsuki.find((x) => x.id == 388);
       setHidan(hidan);
-      const jugo = akatsuki.find((x) => x.id == 521);
+      const jugo = akatsuki.find((x) => x.id == 325);
       setJugo(jugo);
-      const kabuto = akatsuki.find((x) => x.id == 1359);
+      const kabuto = akatsuki.find((x) => x.id == 195);
       setKabuto(kabuto);
       const kakuza = akatsuki.find((x) => x.id == 558);
       setKakuza(kakuza);
-      const karin = akatsuki.find((x) => x.id == 593);
+      const karin = akatsuki.find((x) => x.id == 141);
       setKarin(karin);
       const kisame = akatsuki.find((x) => x.id == 421);
       setKisame(kisame);
@@ -49,7 +49,7 @@ function App() {
     }
   }, [akatsuki]);
 
-  console.log(zetsu);
+  console.log(akatsuki);
 
   if (zetsu == null) {
     return (
