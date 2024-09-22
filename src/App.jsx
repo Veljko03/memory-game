@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./index.css";
+import Cards from "./Components/Cards";
 
 function App() {
   const APIUrl = "https://narutodb.xyz/api/akatsuki";
@@ -23,11 +24,8 @@ function App() {
       .catch((error) => console.error("Error:", error));
   }, []);
 
-  console.log(akatsuki);
-
   useEffect(() => {
     if (akatsuki != null) {
-      console.log(akatsuki);
       const deidara = akatsuki.find((x) => x.id == 193);
       setDeidara(deidara);
       const itachi = akatsuki.find((x) => x.id == 1293);
@@ -51,24 +49,39 @@ function App() {
     }
   }, [akatsuki]);
 
-  //console.log(zetsu);
+  console.log(zetsu);
 
-  return (
-    <>
-      <div className="topSection">
-        <h1>Naruto memory game</h1>
-        <div className="score">
-          <h3>Current score:</h3>
-          <h3>Best score:</h3>
-        </div>
+  if (zetsu == null) {
+    return (
+      <div>
+        <h1>Loading...</h1>
       </div>
-      <div className="cards">
-        <div className="card">
-          <img src="" alt="" />
+    );
+  } else {
+    return (
+      <>
+        <div className="topSection">
+          <h1>Naruto memory game</h1>
+          <div className="score">
+            <h3>Current score:</h3>
+            <h3>Best score:</h3>
+          </div>
+          <Cards
+            one={zetsu}
+            two={kabuto}
+            three={kakuza}
+            four={karin}
+            five={itachi}
+            six={kisame}
+            seven={konan}
+            eight={jugo}
+            nine={hidan}
+            ten={deidara}
+          />
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default App;
