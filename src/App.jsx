@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "./index.css";
+
+function fetchData() {}
 
 function App() {
-  const akatsuki = fetch("https://narutodb.xyz/api/akatsuki")
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
+  const APIUrl = "https://narutodb.xyz/api/akatsuki";
+  const [akatsuki, setAkatsuki] = useState(null);
+  useEffect(() => {
+    fetch(APIUrl)
+      .then((response) => response.json())
+      .then((data) => data.akatsuki)
+      .then((rez) => setAkatsuki(rez))
+      .catch((error) => console.error("Error:", error));
+  }, []);
+
+  const deidara = akatsuki.find((x) => x.id == 193);
+  console.log(deidara);
 
   return (
     <>
@@ -15,7 +26,9 @@ function App() {
           <h3>Best score:</h3>
         </div>
       </div>
-      <div className="cards"></div>
+      <div className="cards">
+        <div className="card"></div>
+      </div>
     </>
   );
 }
