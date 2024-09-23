@@ -46,6 +46,7 @@ function Cards({
 
     if (chekArr.includes(cardID)) {
       setCurrentScore(0);
+      setCheckArr([]);
     } else {
       setCheckArr([...chekArr, cardID]);
       setCurrentScore((c) => c + 1);
@@ -60,10 +61,9 @@ function Cards({
     }
   }, [currentScore]);
 
-  console.log(+"curr");
-  console.log(chekArr + "best");
+  console.log(chekArr + "arr");
 
-  if (bestScore == 10) {
+  if (bestScore == 12) {
     return (
       <div>
         <h1>You won man!</h1>

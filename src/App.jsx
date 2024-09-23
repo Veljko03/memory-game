@@ -66,7 +66,7 @@ function App() {
     return (
       <div className="topSection">
         <div className="top">
-          <h1>Naruto memory game</h1>
+          <h1>Akatsuki Memory Game</h1>
         </div>
 
         <Cards
