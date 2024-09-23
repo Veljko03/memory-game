@@ -45,7 +45,7 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
   }, [currentScore]);
 
   console.log(currentScore + "curr");
-  console.log(bestScore + "best");
+  console.log(chekArr + "best");
 
   if (bestScore == 10) {
     return (
@@ -56,14 +56,20 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
   } else {
     return (
       <div>
-        {allCards.map((c) => (
-          <Card
-            key={c.id}
-            value={c.id}
-            character={c}
-            handleClick={handleCardClick}
-          />
-        ))}
+        <div className="score">
+          <h3>Current score: {currentScore}</h3>
+          <h3>Best score: {bestScore}</h3>
+        </div>
+        <div className="cards">
+          {allCards.map((c) => (
+            <Card
+              key={c.id}
+              value={c.id}
+              character={c}
+              handleClick={handleCardClick}
+            />
+          ))}
+        </div>
       </div>
     );
   }
