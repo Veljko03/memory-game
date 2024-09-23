@@ -21,15 +21,34 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
     nine,
     ten,
   ]);
+  const [chekArr, setCheckArr] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
-  const handleCardClick = () => {
+  const handleCardClick = (e) => {
+    let cardID = e.target.parentNode.getAttribute("value");
+
+    if (chekArr.includes(cardID)) {
+      setCurrentScore(0);
+    } else {
+      setCheckArr([...chekArr, cardID]);
+      setCurrentScore((c) => c + 1);
+    }
+
     setAllCards(shuffleArray(allCards));
   };
+
+  console.log(currentScore);
 
   return (
     <div>
       {allCards.map((c) => (
-        <Card key={c.id} character={c} handleClick={handleCardClick} />
+        <Card
+          key={c.id}
+          value={c.id}
+          character={c}
+          handleClick={handleCardClick}
+        />
       ))}
     </div>
   );
