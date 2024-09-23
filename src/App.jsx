@@ -15,8 +15,8 @@ function App() {
   const [kisame, setKisame] = useState(null);
   const [konan, setKonan] = useState(null);
   const [zetsu, setZetsu] = useState(null);
-  const [curr, setCurr] = useState(0);
-  const [best, setBest] = useState(0);
+  const [jedan, setJedan] = useState(0);
+  const [dva, setDva] = useState(0);
   useEffect(() => {
     fetch(APIUrl)
       .then((response) => response.json())
@@ -60,24 +60,24 @@ function App() {
     );
   } else {
     return (
-      <>
-        <div className="topSection">
+      <div className="topSection">
+        <div className="top">
           <h1>Naruto memory game</h1>
-
-          <Cards
-            one={zetsu}
-            two={kabuto}
-            three={kakuza}
-            four={karin}
-            five={itachi}
-            six={kisame}
-            seven={konan}
-            eight={jugo}
-            nine={hidan}
-            ten={deidara}
-          />
         </div>
-      </>
+
+        <Cards
+          one={zetsu}
+          two={kabuto}
+          three={kakuza}
+          four={karin}
+          five={itachi}
+          six={kisame}
+          seven={konan}
+          eight={jugo}
+          nine={hidan}
+          ten={deidara}
+        />
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import "../index.css";
 
 function shuffleArray(toShufle) {
   return toShufle
@@ -44,7 +45,7 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
     }
   }, [currentScore]);
 
-  console.log(currentScore + "curr");
+  console.log(+"curr");
   console.log(chekArr + "best");
 
   if (bestScore == 10) {

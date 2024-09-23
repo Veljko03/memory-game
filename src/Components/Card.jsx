@@ -1,3 +1,5 @@
+import "../index.css";
+
 function Card({ character, handleClick, value }) {
   return (
     <div className="card" value={value}>
