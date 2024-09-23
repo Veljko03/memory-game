@@ -9,7 +9,20 @@ function shuffleArray(toShufle) {
     .map((a) => a.value);
 }
 
-function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
+function Cards({
+  one,
+  two,
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine,
+  ten,
+  eleven,
+  twelwe,
+}) {
   const [allCards, setAllCards] = useState([
     one,
     two,
@@ -21,6 +34,8 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
     eight,
     nine,
     ten,
+    eleven,
+    twelwe,
   ]);
   const [chekArr, setCheckArr] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);

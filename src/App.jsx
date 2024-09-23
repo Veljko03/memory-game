@@ -47,6 +47,10 @@ function App() {
       setKonan(konan);
       const zetsu = akatsuki.find((x) => x.id == 1425);
       setZetsu(zetsu);
+      const j = akatsuki.find((x) => x.id == 735);
+      setJedan(j);
+      const d = akatsuki.find((x) => x.id == 736);
+      setDva(d);
     }
   }, [akatsuki]);
 
@@ -76,6 +80,8 @@ function App() {
           eight={jugo}
           nine={hidan}
           ten={deidara}
+          eleven={jedan}
+          twelwe={dva}
         />
       </div>
     );
