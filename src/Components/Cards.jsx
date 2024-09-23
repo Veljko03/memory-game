@@ -22,14 +22,14 @@ function Cards({ one, two, three, four, five, six, seven, eight, nine, ten }) {
     ten,
   ]);
 
-  useEffect(() => {
+  const handleCardClick = () => {
     setAllCards(shuffleArray(allCards));
-  }, []);
+  };
 
   return (
     <div>
       {allCards.map((c) => (
-        <Card key={c} character={c} />
+        <Card key={c.id} character={c} handleClick={handleCardClick} />
       ))}
     </div>
   );

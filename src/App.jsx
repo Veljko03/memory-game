@@ -15,6 +15,8 @@ function App() {
   const [kisame, setKisame] = useState(null);
   const [konan, setKonan] = useState(null);
   const [zetsu, setZetsu] = useState(null);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     fetch(APIUrl)
